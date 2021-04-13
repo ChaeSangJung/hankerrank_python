@@ -40,3 +40,9 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+
+
+set은 중복을 허용하지 않는다.
+>>> s2 = set("Hello")
+>>> s2
+{'e', 'H', 'l', 'o'}
