@@ -1,3 +1,3 @@
 # hankerrank_python
 
-- easy > Implementation : Picking Numbers~
+- easy > Implementation : Designer PDF Viewer ~
