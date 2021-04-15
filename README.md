@@ -1,3 +1,3 @@
 # hankerrank_python
 
-- easy > Implementation : Jumping on the Clouds: Revisited ~
+- easy > Implementation : ~ Jumping on the Clouds: Revisited 
