@@ -1,3 +1,5 @@
+https://www.hackerrank.com/challenges/cavity-map/problem
+
 n = int(input())
 arr = [[num for num in input()] for _ in range(n)]
 

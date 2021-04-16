@@ -1,3 +1,5 @@
+https://www.hackerrank.com/challenges/reduced-string/problem
+
 #!/bin/python3
 
 import math

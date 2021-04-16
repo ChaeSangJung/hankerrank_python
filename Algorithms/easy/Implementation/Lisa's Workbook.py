@@ -1,3 +1,5 @@
+https://www.hackerrank.com/challenges/lisa-workbook/problem
+
 n = 5
 k = 3
 arr = [4, 2, 6, 1, 10]

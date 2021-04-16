@@ -1,3 +1,4 @@
+https://www.hackerrank.com/challenges/strong-password/problem
 #!/bin/python3
 
 import math

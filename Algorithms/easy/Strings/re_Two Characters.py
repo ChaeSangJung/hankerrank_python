@@ -1,3 +1,5 @@
+https://www.hackerrank.com/challenges/two-characters/problem
+
 자세히 읽으면 '두 글자'이면서 'alternating'(abab와 같이 서로 교차하면서 바뀌는 문자열)
 
 #!/bin/python3

@@ -1,3 +1,5 @@
+https://www.hackerrank.com/challenges/camelcase/problem
+
 #!/bin/python3
 
 import math
