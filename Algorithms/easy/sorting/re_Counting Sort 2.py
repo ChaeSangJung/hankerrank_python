@@ -76,6 +76,7 @@ for ind in range(len(cnt) 10):
     cnt = [0,0,0,0,1,2,3,4,5,6]
 output = [0, 0, 0, 0, 0, 0, 0]
 arr = [4, 3, 6, 5, 7, 9, 8]
+
 for el in arr:
     el = 4
     output[cnt[el 4] 1] = el 4, output = [0,'4', 0, 0, 0, 0, 0]
@@ -116,46 +117,70 @@ total = 0
 
 for ind in range(len(cnt) 8):
     ind = 0
-    old = cnt[ind]
-    cnt[ind] = total
-    total += old
+    old 0 = cnt[ind : 0]
+    cnt[ind : 0] = total 0, cnt = [0]
+    total 0 += old 0
 
     ind = 1
-    old = cnt[ind]
-    cnt[ind] = total
-    total += old
+    old 0 = cnt[ind : 1]
+    cnt[ind: 1] = total 0 ,cnt = [0,0]
+    total 0 += old 0
 
     ind = 2
-    old = cnt[ind]
-    cnt[ind] = total
-    total += old
+    old 0 = cnt[ind :2]
+    cnt[ind 2] = total 0, cnt=[0,0,0]
+    total 0 += old 0
 
     ind = 3
-    old = cnt[ind]
-    cnt[ind] = total
-    total += old
+    old 2 = cnt[ind :3]
+    cnt[ind : 3] = total 0, cnt=[0,0,0,0]
+    total 2 += old 2
 
     ind = 4
-    old = cnt[ind]
-    cnt[ind] = total
-    total += old
+    old 1 = cnt[ind : 4]
+    cnt[ind : 4] = total 2, cnt = [0,0,0,0,2]
+    total 3 += old 1
 
     ind = 5
-    old = cnt[ind]
-    cnt[ind] = total
-    total += old
+    old 0 = cnt[ind : 5]
+    cnt[ind : 5] = total 3, cnt = [0,0,0,0,2,3]
+    total 3 += old 0
 
     ind = 6
-    old = cnt[ind]
-    cnt[ind] = total
-    total += old
+    old 1 = cnt[ind 6]
+    cnt[ind : 6] = total 3, cnt = [0,0,0,0,2,3,3]
+    total 4 += old 1
 
     ind = 7
-    old = cnt[ind]
-    cnt[ind] = total
-    total += old
+    old 2 = cnt[ind 7]
+    cnt[ind 7] = total 4, cnt = [0,0,0,0,2,3,3,4]
+    total 6 += old 2
 
-    ind = 8
-    old = cnt[ind]
-    cnt[ind] = total
-    total += old
+    cnt = [0,0,0,0,2,3,3,4]
+    output = [0, 0, 0, 0, 0, 0]
+    arr = [4, 3, 6, 3, 7, 7]
+
+    for el in arr:
+        el = 4
+        output[cnt[el 4] 2] = el 4, output = [0, 0, '4', 0, 0, 0]
+        cnt[el 4] += 1, cnt = [0,0,0,0,'3',3,3,4]
+
+        el = 3
+        output[cnt[el 3] 0] = el 3, output = ['3', 0, 4, 0, 0, 0]
+        cnt[el 3] += 1, cnt = [0,0,0,'1',3,3,3,4]
+
+        el = 6
+        output[cnt[el 6] 3] = el 6, output = [3, 0, 4, '6', 0, 0]
+        cnt[el 6] += 1, cnt = [0,0,0,1,3,3,'4',4]
+
+        el = 3
+        output[cnt[el 3] 1] = el 3, output = [3, '3', 4, 6, 0, 0]
+        cnt[el 3] += 1, cnt = [0,0,0,'2',3,3,4,4]
+
+        el = 7
+        output[cnt[el 7] 4] = el 7, output = [3, 3, 4, 6, '7', 0]
+        cnt[el 7] += 1, cnt = [0,0,0,2,3,3,4,'5']
+
+        el = 7
+        output[cnt[el 7] 5] = el 7, output = [3, 3, 4, 6, 7, '7']
+        cnt[el 7] += 1, cnt = [0,0,0,2,3,3,4,'6']
