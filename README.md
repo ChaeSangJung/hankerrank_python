@@ -4,4 +4,4 @@
 
 ## 다시 볼 것들
 ### easy > sorting
-    - Counting Sort 2.py 보기2번 분석랗 것!
+- Counting Sort 2.py
