@@ -1,6 +1,6 @@
 # hankerrank_python
 
-- easy > Implementation : Equalize the Array ~
+- easy > Implementation : ~ ACM ICPC Team
 
 ## 다시 볼 것들
 ### easy > sorting
