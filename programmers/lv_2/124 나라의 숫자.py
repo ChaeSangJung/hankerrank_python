@@ -7,7 +7,7 @@ def solution(n):
     answer = ""
 
     while n > 0:
-        n -= 1 #인덱스 때문에 하나 빼준다.
+        n -= 1 #인덱스떄문에 1을뺴서 0부터 대입
         answer = num[n % 3] + answer
         n //= 3
 
