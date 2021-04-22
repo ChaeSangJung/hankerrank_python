@@ -11,4 +11,4 @@
 ## programmers
 - lv1: 4, lv2: 1
 - https://dojang.io/mod/page/view.php?id=1334
-- 문자열 가지고 놀기 정리할 것
+- 문자열 가지고 놀기 정리할 것 (lv2: 튜플)
