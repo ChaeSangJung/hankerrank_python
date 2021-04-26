@@ -1,0 +1,7 @@
+https://m.blog.naver.com/ygj01069/221944161510
+
+1. split() 
+2. map()
+3. join()
+4. enumerate()
+
