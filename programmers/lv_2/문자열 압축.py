@@ -35,15 +35,42 @@ def solution(s):
 
 s= 'aabbaccc'
 
-
 LENGTH 8 = len(s)
 STR, COUNT = 0, 1
 cand = [LENGTH] cand= [8]
 
 for size in range(1, LENGTH//2 + 1:5):
     size = 1
-    splited = [s[i 1:i 1+size 1:2] for i in range(0, LENGTH 8, size 1)]
+    splited = [s[i 0:i 0+size 1:1] for i in range(0, LENGTH 8, size 1)]
     splited = ['a', 'a', 'b', 'b', 'a', 'c', 'c', 'c']
 
     stack = [[splited[0], 1]]
     stack = [['a',1]]
+
+    for unit in splited[1:]: 'a', 'b', 'b', 'a', 'c', 'c', 'c']
+        unit = 'a'
+        if stack[-1][STR 0] 'a' != unit a false
+        else:
+            stack[-1][COUNT 0] += 1 : stack = [['a','2']]
+        unit = 'b'
+        if stack[-1][STR 0] 'a' != unit b true
+            stack.append([unit 'b', 1]) : stack = [['a',2],'['b', 1]']
+        unit = 'b'
+            stack[-1][COUNT 0] += 1 : stack = [['a',2],'['b', 2]']
+        unit = 'a'
+        if stack[-1][STR 0] 'a' != unit a false
+        else:
+            stack[-1][COUNT 0] += 1 : stack = [['a',2],['b', 2],'['a',1]']
+        unit = 'c'
+        if stack[-1][STR 0] 'c' != unit a false
+        else:
+            stack[-1][COUNT 0] += 1 : stack = [['a',2],['b', 2],['a',1],['c',1]]
+        unit = 'c'
+        if stack[-1][STR 0] 'c' != unit c true
+            stack = [['a',2],['b', 2],['a',1],['c',2]]
+        unit = 'c'
+        if stack[-1][STR 0] 'c' != unit c true
+            stack = [['a',2],['b', 2],['a',1],['c',3]]
+    
+    compressed = '2a2ba3c'
+    cnd = ['2a2ba3c']
