@@ -1,5 +1,6 @@
 https://programmers.co.kr/learn/courses/30/lessons/42862
 
+# 문제를 보면 양 옆에 빌려준다.
 def solution(n, lost, reserve):
     _reserve = [r for r in reserve if r not in lost]
     _lost = [l for l in lost if l not in reserve]
@@ -11,4 +12,7 @@ def solution(n, lost, reserve):
         elif b in _lost:
             _lost.remove(b)
     return n - len(_lost)
+
+_reserve : [1]
+_lost : [3]
 

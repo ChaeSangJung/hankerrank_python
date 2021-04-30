@@ -1,16 +1,21 @@
-https://programmers.co.kr/learn/courses/30/lessons/17681
+https://programmers.co.kr/learn/courses/30/lessons/76501
 
+zip : https://www.daleseo.com/python-zip/
 
-[Python] 2진수, 8진수, 10진수, 16진수 변환
-https://brownbears.tistory.com/467
-
-[python] zip 함수
-https://www.daleseo.com/python-zip/
+def solution(absolutes, signs):
+    answer=0
+    for absolute,sign in zip(absolutes,signs):
+        if sign:
+            answer+=absolute
+        else:
+            answer-=absolute
+    return answer
 
 마치 옷의 지퍼(zipper)처럼 두 그룹의 데이터를 서로 엮어주는 파이썬의 내장 함수 zip()에 대해서 알아보도록 하겠습니다.
 
 zip
-zip() 함수는 여러 개의 순회 가능한(iterable) 객체를 인자로 받고, 각 객체가 담고 있는 원소를 터플의 형태로 차례로 접근할 수 있는 반복자(iterator)를 반환합니다. 설명이 좀 어렵게 들릴 수도 있는데요. 간단한 예제를 보면 이해가 쉬우실 겁니다.
+zip() 함수는 여러 개의 순회 가능한(iterable) 객체를 인자로 받고, 각 객체가 담고 있는 원소를 터플의 형태로 차례로 접근할 수 있는 반복자(iterator)를 반환합니다. 
+설명이 좀 어렵게 들릴 수도 있는데요. 간단한 예제를 보면 이해가 쉬우실 겁니다.
 
 >>> numbers = [1, 2, 3]
 >>> letters = ["A", "B", "C"]
@@ -20,7 +25,8 @@ zip() 함수는 여러 개의 순회 가능한(iterable) 객체를 인자로 받
 (1, 'A')
 (2, 'B')
 (3, 'C')
-위 코드를 보면 numbers 리스트와 letters 리스트를 zip() 함수에 인자로 넘겨서 호출 후에, for 문으로 zip() 함수의 반환값을 대상으로 루프를 돌면서 터플을 차례로 출력하고 있습니다.
+위 코드를 보면 numbers 리스트와 letters 리스트를 zip() 함수에 인자로 넘겨서 호출 후에, 
+for 문으로 zip() 함수의 반환값을 대상으로 루프를 돌면서 터플을 차례로 출력하고 있습니다.
 
 zip() 함수를 사용하지 않고, 인덱스(index) 변수를 사용해서 위 코드를 다시 작성해보면 좀 더 이해가 쉬우실 겁니다.
 
@@ -89,43 +95,3 @@ zip() 함수로 넘기는 인자의 길이가 다를 때는 주의를 해야 합
 >>> letters = ["A"]
 >>> list(zip(numbers, letters))
 [('1', 'A')]
-마치면서
-이상으로 파이썬에 내장된 재미있는 함수인 zip()에 대해서 살펴보았습니다.
-
-
-[python] rjust, ljust, zfill
-https://www.crocus.co.kr/1660
-
-def solution(n, arr1, arr2):
-    # 포맷을 이용한 진수 변환
-    for i in range(n):
-        arr1[i]=format(arr1[i],'b')
-        arr2[i]=format(arr2[i],'b')
-
-def solution(n, arr1, arr2):
-    answer = []
-    for i,j in zip(arr1,arr2):        
-        a12 = str(bin(i|j)[2:])        
-        a12=a12.rjust(n,'0')
-        a12=a12.replace('1','#')
-        a12=a12.replace('0',' ')
-        answer.append(a12)
-    return answer
-
-def solution(n, arr1, arr2):
-    answer = []
-    for i in range(n):
-        a = str(bin(arr1[i]|arr2[i])[2:]).rjust(n,'0').replace('1','#').replace('0',' ')
-        answer.append(a)
-    return answer
-
-solution = lambda n, arr1, arr2: ([''.join(map(lambda x: '#' if x=='1' else ' ', "{0:b}".format(row).zfill(n))) for row in (a|b for a, b in zip(arr1, arr2))])
-
-string.replace() 는 원본 string을 바꿔주는 게 아니다!!
-문제를 풀면서 문자열안에 있는 문자를 직접 바꾸고 싶어 s.replace()를 시도했는데 잘 안됐다. s.replace(i, i.upper()) 왜 안되는 거지?.?
-
-찾아보니 replace()는 원본 문자열을 바꿔주는 게 아니라 값을 바꾼 새로운 문자열을 반환하는 함수였다. 즉 s.replace(i, i.upper())를 하면 s 원본이 아닌 다른 새로운 문자열을 반환하는 것...!!! 그래서 안됐던 거였음
-
-replace() is an inbuilt function in Python programming language that returns a copy of the string where all occurrences of a substring are replaced with another substring.
-
-https://www.geeksforgeeks.org/python-string-replace/

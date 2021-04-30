@@ -6,3 +6,5 @@ def solution(arr):
         return arr
     else :
         return [-1]
+
+# index 확실히 알아 놓을 것

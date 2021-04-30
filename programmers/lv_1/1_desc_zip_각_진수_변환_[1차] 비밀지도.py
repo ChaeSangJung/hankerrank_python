@@ -1,15 +1,37 @@
-https://programmers.co.kr/learn/courses/30/lessons/76501
+https://programmers.co.kr/learn/courses/30/lessons/17681
 
-zip : https://www.daleseo.com/python-zip/
+https://docs.python.org/ko/3/library/functions.html#bin
+bin()
+정수를 《0b》 가 앞에 붙은 이진 문자열로 변환합니다. 결과는 올바른 파이썬 표현식입니다. x 가 파이썬 int 객체가 아니라면, 정수를 돌려주는 __index__() 메서드를 정의해야 합니다. 몇 가지 예를 들면:
 
-def solution(absolutes, signs):
-    answer=0
-    for absolute,sign in zip(absolutes,signs):
-        if sign:
-            answer+=absolute
-        else:
-            answer-=absolute
-    return answer
+>>>
+bin(3)
+'0b11'
+bin(-10)
+'-0b1010'
+접두어 《0b》 가 필요할 수도, 필요 없을 수도 있다면, 다음 방법의 하나를 사용할 수 있습니다.
+
+>>>
+format(14, '#b'), format(14, 'b')
+('0b1110', '1110')
+f'{14:#b}', f'{14:b}'
+('0b1110', '1110')
+자세한 내용은 format()을 보세요.
+
+format()
+format_spec 의 제어에 따라, value 를 《포맷된》 표현으로 변환합니다. format_spec 의 해석은 value 인자의 형에 의존하지만, 대부분의 내장형에 의해 사용되는 표준 포매팅 문법이 있습니다: 포맷 명세 미니 언어.
+
+기본 format_spec 은 빈 문자열이며 일반적으로 str(value) 를 호출하는 것과 같은 효과를 줍니다.
+
+format(value, format_spec) 에 대한 호출은 type(value).__format__(value, format_spec) 로 번역되는데, value의 __format__() 메서드를 검색할 때 인스턴스 딕셔너리를 건너뜁니다. 메서드 검색이 object 에 도달하고 format_spec 이 비어 있지 않거나, format_spec 또는 반환 값이 문자열이 아닌 경우 TypeError 예외가 발생합니다.
+
+버전 3.4에서 변경: object().__format__(format_spec) 은 format_spec 이 빈 문자열이 아닌 경우 TypeError 를 일으킵니다.
+
+[Python] 2진수, 8진수, 10진수, 16진수 변환
+https://brownbears.tistory.com/467
+
+[python] zip 함수
+https://www.daleseo.com/python-zip/
 
 마치 옷의 지퍼(zipper)처럼 두 그룹의 데이터를 서로 엮어주는 파이썬의 내장 함수 zip()에 대해서 알아보도록 하겠습니다.
 
@@ -93,3 +115,49 @@ zip() 함수로 넘기는 인자의 길이가 다를 때는 주의를 해야 합
 >>> letters = ["A"]
 >>> list(zip(numbers, letters))
 [('1', 'A')]
+마치면서
+이상으로 파이썬에 내장된 재미있는 함수인 zip()에 대해서 살펴보았습니다.
+
+
+[python] rjust, ljust, zfill
+https://www.crocus.co.kr/1660
+
+https://dojang.io/mod/page/view.php?id=2460
+47.1.3  비트 논리 연산자 사용하기
+47.1.4  비트 연산자 진리표
+
+def solution(n, arr1, arr2):
+    # 포맷을 이용한 진수 변환
+    for i in range(n):
+        arr1[i]=format(arr1[i],'b')
+        arr2[i]=format(arr2[i],'b')
+
+def solution(n, arr1, arr2):
+    answer = []
+    for i,j in zip(arr1,arr2):        
+        a12 = str(bin(i|j)[2:])        
+        a12=a12.rjust(n,'0')
+        a12=a12.replace('1','#')
+        a12=a12.replace('0',' ')
+        answer.append(a12)
+    return answer
+
+def solution(n, arr1, arr2):
+    answer = []
+    for i in range(n):
+        a = str(bin(arr1[i]|arr2[i])[2:]).rjust(n,'0').replace('1','#').replace('0',' ')
+        answer.append(a)
+    return answer
+
+solution = lambda n, arr1, arr2: ([''.join(map(lambda x: '#' if x=='1' else ' ', "{0:b}".format(row).zfill(n))) for row in (a|b for a, b in zip(arr1, arr2))])
+
+string.replace() 는 원본 string을 바꿔주는 게 아니다!!
+문제를 풀면서 문자열안에 있는 문자를 직접 바꾸고 싶어 s.replace()를 시도했는데 잘 안됐다. s.replace(i, i.upper()) 왜 안되는 거지?.?
+
+찾아보니 replace()는 원본 문자열을 바꿔주는 게 아니라 값을 바꾼 새로운 문자열을 반환하는 함수였다. 즉 s.replace(i, i.upper())를 하면 
+s 원본이 아닌 다른 새로운 문자열을 반환하는 것...!!! 그래서 안됐던 거였음
+
+replace() is an inbuilt function in Python programming language that returns a copy of the string 
+where all occurrences of a substring are replaced with another substring.
+
+https://www.geeksforgeeks.org/python-string-replace/

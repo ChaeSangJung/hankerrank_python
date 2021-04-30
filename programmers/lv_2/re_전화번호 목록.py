@@ -1,4 +1,4 @@
-https://programmers.co.kr/learn/courses/30/lessons/42577/solution_groups?language=python3
+https://programmers.co.kr/learn/courses/30/lessons/42577
 
 def solution(phone_book):
     answer = True
