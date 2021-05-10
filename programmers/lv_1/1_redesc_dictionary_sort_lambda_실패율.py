@@ -8,7 +8,7 @@ def solution(N, stages):
         if num != 0:
             count = stages.count(stage)
             result[stage] = count / num
-            num -= count # stage 1 1명 통과 못함 stage 1에 도달한 사람은 N-1명
+            num -= count # stage 1 1명 통과 못함 stage 1을 통과한 사람은 N-1명
         else:
             result[stage] = 0
 
