@@ -11,3 +11,14 @@ def solution(n):
       answer += n%10
       n=n//10
     return answer
+
+# cf
+# 수 뒤집기
+def reverse(x):
+    res=0
+    while x>0:
+        t=x%10
+        # 나머지 값을 10단위 100단위로 순차적으로 올려준다.
+        res=res*10+t
+        x=x//10
+    return res
