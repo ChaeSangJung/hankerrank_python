@@ -6,7 +6,7 @@ def solution(s):
 def solution(s):
     result = 0
 
-    for idx, number in enumerate(s[::-1]):
+    for idx, number in enumerate(s[::-1]): # 거꾸로 for
         if number == '-':
             result *= -1
         else:

@@ -9,3 +9,5 @@ def solution(nums):
     else:
         answer=len(ponketmon)
     return answer
+
+nums=[1,1,2,3,3,4]
